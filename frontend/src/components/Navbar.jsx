@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'remixicon/fonts/remixicon.css';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+  const products = useSelector((state) => state.cart.products);
+
   return (
     <header className='fixed-nav-bar w-nav'>
       <nav className='max-w-screen-2xl mx-auto px-4 flex justify-between items-center'>
@@ -41,7 +44,7 @@ const Navbar = () => {
                 className='text-sm inline-block px-1.5 text-white rounded-full
               bg-primary text-center'
               >
-                0
+                {products.length}
               </sup>
             </button>
           </span>
