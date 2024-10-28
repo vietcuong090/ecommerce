@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -23,7 +24,9 @@ app.use(
 //all routers
 
 const authuRutes = require('./src/users/user.route');
+const productRouters = require('./src/products/products.router');
 app.use('/api/auth', authuRutes);
+app.use('/api/products', productRouters);
 
 main()
   .then(() => console.log('MongoDB.'))

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const ReviewSchema = new mongoose.Schema(
   {
     comment: { type: String, required: true },
-    rating: { type: Number, required: truw },
+    rating: { type: Number, required: true },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
   },
@@ -12,4 +12,4 @@ const ReviewSchema = new mongoose.Schema(
 
 const Reviews = mongoose.model('Reviews', ReviewSchema);
 
-module.exports = Products;
+module.exports = Reviews;
